@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File a Complaint - HZ Waste Management</title>
+    <link rel="icon" href="logo HZ.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+8jhAXgR0YF7fCpGQDEQ5oqcKXz2dM8kq+fFZlETnJkTtEY9+jG0KkqUuV8y2WfKIS6KQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --bg-primary: #04081c;
+            --bg-secondary: #05101f;
+            --surface: rgba(18, 32, 74, 0.86);
+            --text: #edf2ff;
+            --text-secondary: #9bb4d7;
+            --accent: #f5b942;
+            --accent-hover: #f7c96f;
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #05101f 0%, #040818 45%, #091020 100%);
+            color: var(--text);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url('backround.jpg') center/cover no-repeat;
+            opacity: 0.12;
+            filter: blur(3px);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 20% 10%, rgba(245, 185, 66, 0.15), transparent 35%),
+                        radial-gradient(circle at 80% 90%, rgba(4, 120, 255, 0.12), transparent 40%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            backdrop-filter: blur(20px);
+            background: rgba(4, 8, 28, 0.88);
+            border-bottom: 1px solid var(--border);
+            z-index: 50;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .brand:hover { color: var(--accent); }
+
+        .brand img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 24px rgba(245, 185, 66, 0.2);
+        }
+
+        /* Main Container */
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+            min-height: 100vh;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb a:hover { color: var(--accent-hover); }
+
+        /* Header Section */
+        .complaint-header {
+            margin-bottom: 3rem;
+        }
+
+        .complaint-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #edf2ff 0%, #b8d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .complaint-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Form Container */
+        .complaint-container {
+            background: linear-gradient(135deg, rgba(18, 32, 74, 0.7), rgba(13, 22, 52, 0.9));
+            border: 1.5px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: #ff6b6b;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            border: 1.5px solid var(--border);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(155, 180, 215, 0.5);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(245, 185, 66, 0.1);
+        }
+
+        input.valid, textarea.valid {
+            border-color: #4caf50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        input.error, textarea.error {
+            border-color: #f44336 !important;
+            background: rgba(244, 67, 54, 0.05);
+        }
+
+        .error-message {
+            color: #f44336;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: var(--bg-primary);
+            flex: 1;
+            min-width: 150px;
+            box-shadow: 0 20px 50px rgba(245, 185, 66, 0.3);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 70px rgba(245, 185, 66, 0.4);
+        }
+
+        .btn-reset {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .btn-reset:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px);
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover { color: var(--accent-hover); }
+
+        @media (max-width: 768px) {
+            .page-container { padding: 100px 1rem 3rem; }
+            .complaint-container { padding: 1.5rem; }
+            .form-row { grid-template-columns: 1fr; gap: 1rem; }
+            .button-group { flex-direction: column; }
+            .btn-submit, .btn-reset { width: 100%; }
+            .complaint-header h1 { font-size: 2rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="js-styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo HZ.png" alt="HZ Logo">
+            <span>HZ WASTE</span>
+        </a>
+    </header>
+
+    <div class="page-container">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <span>›</span>
+            <span>File Complaint</span>
+        </div>
+
+        <div class="complaint-header">
+            <h1><i class="fas fa-exclamation-circle"></i> File a Complaint</h1>
+            <p>We take your concerns seriously. Please provide detailed information about your issue, and our team will investigate promptly and respond within 24 hours.</p>
+        </div>
+
+        <div class="complaint-container">
+            <form id="complaintForm">
+                <h3 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-user-circle"></i> Your Information
+                </h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name <span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" required minlength="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName" required minlength="2">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required minlength="10">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address <span class="required">*</span></label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <h3 style="color: var(--accent); font-size: 1.1rem; margin: 2rem 0 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-clipboard-list"></i> Complaint Details
+                </h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="issueDate">Date of Issue <span class="required">*</span></label>
+                        <input type="date" id="issueDate" name="issueDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category <span class="required">*</span></label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a Category</option>
+                            <option value="collection">Collection Issue</option>
+                            <option value="damage">Property Damage</option>
+                            <option value="noise">Noise/Disturbance</option>
+                            <option value="smell">Bad Smell/Odor</option>
+                            <option value="billing">Billing Issue</option>
+                            <option value="service">Poor Service Quality</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Detailed Description <span class="required">*</span></label>
+                    <textarea id="description" name="description" required minlength="30" placeholder="Please describe your complaint in detail..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="authorization" required>
+                        <span style="margin-left: 0.5rem;">I authorize HZ Waste Management to contact me regarding this complaint <span class="required">*</span></span>
+                    </label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Submit Complaint
+                    </button>
+                    <button type="reset" class="btn-reset">
+                        <i class="fas fa-redo"></i> Clear Form
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p style="margin-bottom: 1rem;">Thank you for helping us improve our services.</p>
+            <p>
+                <a href="index.html">Return to Home</a> | 
+                <a href="tel:+1234567890">Call: (+1) 234-567-890</a>
+            </p>
+            <p style="margin-top: 1.5rem; opacity: 0.7;">© 2024 HZ Waste Management. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('complaintForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            WasteManagement.Storage.set('lastComplaint', {
+                ...data,
+                submittedAt: new Date().toISOString(),
+                referenceNumber: 'COMPLAINT-' + Math.random().toString(36).substr(2, 9).toUpperCase()
+            });
+            
+            WasteManagement.showNotification('Your complaint has been submitted successfully!', 'success');
+            
+            const refNum = WasteManagement.Storage.get('lastComplaint').referenceNumber;
+            setTimeout(() => {
+                alert(`Reference Number: ${refNum}\n\nWe will contact you within 24 hours.`);
+                this.reset();
+            }, 500);
+        });
+
+        document.getElementById('phone').addEventListener('input', function() {
+            WasteManagement.formatPhoneNumber(this);
+        });
+
+        document.querySelectorAll('input, select, textarea').forEach(field => {
+            field.addEventListener('blur', function() {
+                if (this.required || this.value) {
+                    validateField(this);
+                }
+            });
+        });
+
+        function validateField(field) {
+            const value = field.value.trim();
+            const errorMsg = field.parentElement.querySelector('.error-message');
+            if (errorMsg) errorMsg.remove();
+            
+            if (!value && field.required) {
+                field.classList.add('error');
+                return;
+            }
+            
+            if (field.type === 'email' && value) {
+                const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+                field.classList.toggle('error', !valid);
+                field.classList.toggle('valid', valid);
+                return;
+            }
+            
+            if (field.type === 'tel' && value) {
+                const valid = value.replace(/\D/g, '').length >= 10;
+                field.classList.toggle('error', !valid);
+                field.classList.toggle('valid', valid);
+                return;
+            }
+            
+            field.classList.remove('error');
+            field.classList.toggle('valid', value.length > 0);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HZ Waste Management - Professional Waste Solutions</title>
+  <link rel="icon" href="logo HZ.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+8jhAXgR0YF7fCpGQDEQ5oqcKXz2dM8kq+fFZlETnJkTtEY9+jG0KkqUuV8y2WfKIS6KQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="js-styles.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation Header -->
+    <header class="site-header">
+      <div class="brand">
+        <img src="logo HZ.png" alt="HZ Logo">
+        <span>HZ WASTE</span>
+      </div>
+      <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#owner">Owner</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#stats">Statistics</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="complain.html" class="btn-complain">File Complaint</a></li>
+      </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">
+            <i class="fas fa-leaf"></i> Sustainable Solutions
+          </span>
+          <h1>Professional Waste Management for a Cleaner Future</h1>
+          <p>HZ Waste Management provides comprehensive, eco-friendly waste disposal and recycling solutions for residential and commercial clients. Join thousands of satisfied customers.</p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="WasteManagement.openModal('contactModal')">Get Started</button>
+            <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="capture 9.png" alt="Waste Management">
+            <div class="hero-card-text">
+              <h3>Trusted Service Provider</h3>
+              <p>Over 5,000+ satisfied clients trust us with their waste management needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Owner Section -->
+    <section id="owner" class="owner-section">
+      <div class="owner-container">
+        <div class="owner-image">
+          <img src="Capture.PNG" alt="Hamid Munawar - Owner">
+          <div class="owner-badge">
+            <i class="fas fa-crown"></i>
+            <span>Founder & CEO</span>
+          </div>
+        </div>
+        <div class="owner-content">
+          <div class="owner-header">
+            <h2>Meet Our Founder</h2>
+            <h1>Hamid Munawar</h1>
+            <p class="owner-title">Founder & Chief Executive Officer</p>
+          </div>
+          
+          <p class="owner-bio">
+            With over 15 years of experience in waste management and environmental sustainability, Hamid Munawar founded HZ Waste Management with a vision to revolutionize how communities manage their waste. His commitment to innovation, environmental responsibility, and customer satisfaction has established HZ as a leader in the industry.
+          </p>
+
+          <div class="owner-achievements">
+            <div class="achievement-item">
+              <i class="fas fa-award"></i>
+              <div>
+                <h4>Industry Recognition</h4>
+                <p>Award-winning waste management solutions</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <i class="fas fa-leaf"></i>
+              <div>
+                <h4>Environmental Champion</h4>
+                <p>Dedicated to sustainable practices</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <i class="fas fa-handshake"></i>
+              <div>
+                <h4>Customer Focused</h4>
+                <p>Building lasting relationships</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="owner-quote">
+            <p><i class="fas fa-quote-left"></i> "Our mission is to create a cleaner, more sustainable future by providing exceptional waste management solutions that our customers can trust." <i class="fas fa-quote-right"></i></p>
+          </div>
+
+          <div class="owner-contact">
+            <p><strong>Connect with Hamid:</strong>030112607724</p>
+            <div class="social-contact">
+              <a href="https://wa.me/923112607724" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <a href="tel:+923112607724" title="Call"><i class="fas fa-phone"></i> Call</a>
+              <a href="mailto:info@zeeshanmunaver124.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
+              <a href="https://www.linkedin.com/in/hamidmunawar" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Services Section -->
+      <section id="services" class="section">
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>Comprehensive waste management solutions tailored to your needs</p>
+        </div>
+        <div class="grid-3">
+          <div class="card service-card">
+            <div class="card-icon">
+              <i class="fas fa-trash-alt"></i>
+            </div>
+            <h3>Residential Collection</h3>
+            <p>Reliable weekly and bi-weekly waste collection for homes. We handle general waste, recyclables, and green waste separately for optimal processing.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Weekly pickups</li>
+              <li><i class="fas fa-check"></i> 24/7 support</li>
+              <li><i class="fas fa-check"></i> Eco-friendly</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <div class="card-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+            <h3>Commercial Disposal</h3>
+            <p>Industrial-scale waste management for businesses. Customized solutions including bulk waste, construction debris, and hazardous material handling.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Flexible scheduling</li>
+              <li><i class="fas fa-check"></i> Cost-effective</li>
+              <li><i class="fas fa-check"></i> Certified disposal</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <div class="card-icon">
+              <i class="fas fa-recycle"></i>
+            </div>
+            <h3>Recycling Program</h3>
+            <p>Comprehensive recycling initiatives for paper, plastic, metals, and glass. Our programs reduce landfill waste by up to 70% through proper sorting and processing.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Eco-conscious</li>
+              <li><i class="fas fa-check"></i> Money-saving</li>
+              <li><i class="fas fa-check"></i> Free consultation</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <div class="card-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Green Waste Processing</h3>
+            <p>Specialized handling of organic waste, garden trimmings, and compostable materials. We convert green waste into nutrient-rich compost for agricultural use.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Sustainable</li>
+              <li><i class="fas fa-check"></i> Bulk capacity</li>
+              <li><i class="fas fa-check"></i> Same-day service</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <div class="card-icon">
+              <i class="fas fa-wrench"></i>
+            </div>
+            <h3>Maintenance & Cleaning</h3>
+            <p>Professional cleaning services for bins, containers, and collection areas. Our maintenance teams ensure hygienic waste management facilities at all times.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Hygiene-focused</li>
+              <li><i class="fas fa-check"></i> Regular schedule</li>
+              <li><i class="fas fa-check"></i> Professional team</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <div class="card-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Customer Support</h3>
+            <p>Round-the-clock customer service for all your inquiries and concerns. Our dedicated team is available via phone, email, and live chat for immediate assistance.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> 24/7 available</li>
+              <li><i class="fas fa-check"></i> Quick response</li>
+              <li><i class="fas fa-check"></i> Multilingual</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section about-section">
+        <div class="about-grid">
+          <div class="about-image">
+            <img src="hamid2.PNG" alt="About HZ Waste Management">
+            <div class="about-badge">
+              <span class="badge-number">2+</span>
+              <span class="badge-text">Years of Experience</span>
+            </div>
+          </div>
+          <div class="about-content">
+            <span class="eyebrow"><i class="fas fa-star"></i> About Us</span>
+            <h2>Leading Waste Management Solutions</h2>
+            <p>HZ Waste Management has been serving communities for over 2 years, establishing ourselves as the region's most trusted waste management provider. Our commitment to environmental sustainability and customer satisfaction drives everything we do.</p>
+            
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <h4><i class="fas fa-tree"></i> Environmental Focus</h4>
+                <p>We prioritize sustainable practices and minimize environmental impact through advanced recycling and composting programs.</p>
+              </div>
+              <div class="highlight-item">
+                <h4><i class="fas fa-users"></i> Customer First</h4>
+                <p>Your satisfaction is our priority. We offer flexible scheduling, competitive pricing, and exceptional customer support.</p>
+              </div>
+              <div class="highlight-item">
+                <h4><i class="fas fa-shield-alt"></i> Certified & Licensed</h4>
+                <p>All our operations meet or exceed government standards and environmental regulations. We're fully insured and certified.</p>
+              </div>
+              <div class="highlight-item">
+                <h4><i class="fas fa-rocket"></i> Innovation</h4>
+                <p>We invest in modern technology and equipment to provide efficient, reliable, and innovative waste management solutions.</p>
+              </div>
+            </div>
+
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Your Free Quote</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics Section -->
+      <section id="stats" class="section stats-section">
+        <h2>Our Impact</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" data-target="5000">0</div>
+            <div class="stat-label">Active Clients</div>
+            <p>Trusted by thousands of satisfied customers</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="50000">0</div>
+            <div class="stat-label">Tons Recycled</div>
+            <p>Total waste successfully recycled and processed</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="70">0</div>
+            <div class="stat-label">% Diversion Rate</div>
+            <p>Waste diverted from landfills annually</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="24">0</div>
+            <div class="stat-label">Hour Support</div>
+            <p>Customer service available around the clock</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section">
+        <div class="section-header">
+          <h2>Get In Touch</h2>
+          <p>Have questions? We're here to help. Contact us today for a free consultation.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>Address</h3>
+              <p> Green Street<br>pakistan,Waste City, karachi</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h3>Phone</h3>
+              <p><a href="tel:+1234567890">92+31112607724</a></p>
+              <p class="subtext">Mon-Fri: 8am - 6pm</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3>Email</h3>
+              <p><a href="mailto:info@hzwaste.com">info@zeeshanmunaver124.com</a></p>
+              <p class="subtext">Response within 2 hours</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3>Hours</h3>
+              <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="cname">Full Name</label>
+              <input type="text" id="cname" name="name" required minlength="3">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cemail">Email Address</label>
+                <input type="email" id="cemail" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="cphone">Phone Number</label>
+                <input type="tel" id="cphone" name="phone" required minlength="10">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="csubject">Subject</label>
+              <select id="csubject" name="subject" required>
+                <option value="">Select Subject</option>
+                <option value="quote">Get a Quote</option>
+                <option value="question">General Question</option>
+                <option value="complaint">Complaint</option>
+                <option value="feedback">Feedback</option>
+                <option value="partnership">Partnership Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cmessage">Message</label>
+              <textarea id="cmessage" name="message" rows="5" required minlength="20"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" class="section team-section">
+        <div class="section-header">
+          <h2>Meet Our Team</h2>
+          <p>Dedicated professionals committed to excellent waste management</p>
+        </div>
+        <div class="grid-4">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="hamid.PNG" alt="Team Member">
+            </div>
+            <h3>Hamid Manager</h3>
+            <p class="role">Operations Manager</p>
+            <p class="bio">Expert in waste management logistics with 10+ years experience</p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-image">
+              <img src="hamid2.PNG" alt="Team Member">
+            </div>
+            <h3>Team Lead</h3>
+            <p class="role">Fleet Supervisor</p>
+            <p class="bio">Manages our collection fleet and ensures timely pickups</p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-image">
+              <img src="hamid3.PNG" alt="Team Member">
+            </div>
+            <h3>Sustainability Officer</h3>
+            <p class="role">Environmental Lead</p>
+            <p class="bio">Develops recycling programs and eco-friendly initiatives</p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-image">
+              <img src="hami4.PNG" alt="Team Member">
+            </div>
+            <h3>Customer Care</h3>
+            <p class="role">Support Director</p>
+            <p class="bio">Ensures exceptional customer service and satisfaction</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="section gallery-section">
+        <div class="section-header">
+          <h2>Our Work</h2>
+          <p>Visual showcase of our waste management operations and facilities</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="hami4.PNG" alt="Waste Management Facility">
+            <div class="gallery-overlay">
+              <h3>Modern Facility</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="Capture 7.PNG" alt="Recycling Operations">
+            <div class="gallery-overlay">
+              <h3>Recycling Operations</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="caoture 10.png" alt="Service Fleet">
+            <div class="gallery-overlay">
+              <h3>Service Fleet</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="Capture 1.PNG" alt="Processing Center">
+            <div class="gallery-overlay">
+              <h3>Processing Center</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>HZ Waste Management</h4>
+          <p>Leading waste management solutions for a sustainable future. Serving communities with integrity and excellence.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/HZWasteManagement" target="_blank" aria-label="Facebook" title="Follow on Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/HZWaste" target="_blank" aria-label="Twitter" title="Follow on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/923112607724" target="_blank" aria-label="WhatsApp" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/hzwastemanagement" target="_blank" aria-label="Instagram" title="Follow on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/hzwastemanagement" target="_blank" aria-label="LinkedIn" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#owner">Owner</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="complain.html">File Complaint</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Residential Collection</a></li>
+            <li><a href="#services">Commercial Disposal</a></li>
+            <li><a href="#services">Recycling Program</a></li>
+            <li><a href="#services">Green Waste</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p><strong>Phone:</strong> 92+3112607724</p>
+          <p><strong>Email:</strong> info@zeeshanmunaver124.com</p>
+          <p><strong>Address:</strong>  Green Street, Waste karachi</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 HZ Waste Management. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923112607724" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="WasteManagement.closeModal('contactModal')">×</button>
+        <div class="modal-header">
+          <h2>Quick Contact</h2>
+        </div>
+        <div class="modal-body">
+          <form id="quickContactForm">
+            <div class="form-group">
+              <label for="qname">Name</label>
+              <input type="text" id="qname" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="qemail">Email</label>
+              <input type="email" id="qemail" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="qphone">Phone</label>
+              <input type="tel" id="qphone" name="phone" required>
+            </div>
+            <button type="submit" class="btn-primary">Schedule a Call</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Handle contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      WasteManagement.showNotification('Thank you! We will contact you soon.', 'success');
+      this.reset();
+    });
+
+    // Handle quick contact form
+    document.getElementById('quickContactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      WasteManagement.showNotification('Request received! We will call you shortly.', 'success');
+      WasteManagement.closeModal('contactModal');
+      this.reset();
+    });
+
+    // Animate stats when section comes into view
+    function animateStats() {
+      const statCards = document.querySelectorAll('.stat-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const statNumber = entry.target.querySelector('.stat-number');
+            const target = parseInt(statNumber.getAttribute('data-target'));
+            animateNumber(statNumber, target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      statCards.forEach(card => observer.observe(card));
+    }
+
+    function animateNumber(element, target) {
+      let current = 0;
+      const increment = target / 30;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target + (element.getAttribute('data-target') === '24' ? '' : element.getAttribute('data-target') === '70' ? '%' : '');
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, 30);
+    }
+
+    // Initialize stats animation
+    document.addEventListener('DOMContentLoaded', animateStats);
+  </script>
+</body>
+</html>
